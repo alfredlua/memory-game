@@ -1,1 +1,94 @@
-// CSS File
+/*
+*
+* Header
+*
+*/
+
+.title {
+	text-align: center;
+}
+
+
+
+/*
+*
+* Main
+*
+*/
+
+
+
+/*
+*
+* Dashboard
+*
+*/
+
+.dashboard {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.timer {
+	margin: 0 20px;
+}
+
+.move-counter {
+	margin: 0 20px;
+}
+
+.star-rating {
+	margin: 0 20px;
+}
+
+.restart {
+	margin: 0 20px;
+}
+
+
+
+/*
+*
+* Game board
+*
+*/
+
+.game-board {
+	width: 800px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	justify-content: center;
+}
+
+/*
+*
+* Card
+*
+*/
+
+.card {
+	width: 120px;
+	height: 120px;
+	margin: 20px;
+	border: solid 1px #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0;
+}
+
+.card.show {
+	font-size: 2rem;
+}
+
+/*
+*
+* Footer
+*
+*/
+
+footer {
+	text-align: center;
+}
