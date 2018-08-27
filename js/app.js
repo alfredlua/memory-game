@@ -1,13 +1,17 @@
-//
-// 
+
+// Add event listener to all cards
+
+// Cards array holds all the cards
+let card = document.getElementsByClassName('card');
+let cards = [...card];
+// For loop to add event listeners to each card
+for (let i = 0; i < cards.length; i++) {
+	cards[i].addEventListener('click', openCard);
+};
+
 // Open card
-//
-//
 
 function openCard() {
-	event.target.classList.toggle('open');
-	event.target.classList.toggle('show');
-	console.log('A card is opened.');
+	this.classList.toggle('open');
+	this.classList.toggle('disable');
 }
-
-document.addEventListener('click', openCard);
