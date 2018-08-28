@@ -90,6 +90,10 @@
 	pointer-events: none;
 }
 
+.card.matched {
+	background-color: red;
+}
+
 
 /*
 *
