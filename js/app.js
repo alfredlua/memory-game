@@ -32,7 +32,7 @@ function matchCard() {
 		if (openedCards[0].title === openedCards[1].title) {
 			matched();
 		} else {
-			notMatched();
+			setTimeout(notMatched, 500);
 		}
 	}
 	
