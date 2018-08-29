@@ -23,7 +23,9 @@ for (let i = 0; i < cards.length; i++) {
 // Match card logic
 //
 
+// Check if the two opened cards match
 let openedCards = [];
+let moveCount = 0
 
 function matchCard() {
 	openedCards.push(this);
@@ -34,10 +36,12 @@ function matchCard() {
 		} else {
 			setTimeout(notMatched, 500);
 		}
+		moveCount += 1;
+		addMove();
 	}
-	
 }
 
+// If the cards match, add the 'matched' class to show that they are matched
 let matchedCards = 0;
 
 function matched() {
@@ -48,6 +52,7 @@ function matched() {
 	openedCards = [];
 }
 
+// If the cards don't match, remove the 'open' and 'disable' classes to close the cards
 function notMatched() {
 	openedCards[0].classList.remove('open');
 	openedCards[0].classList.remove('disable');
@@ -56,6 +61,20 @@ function notMatched() {
 	openedCards = [];
 }
 
+//
+// Move Counter
+//
+
+function addMove() {
+	document.querySelector('.move-counter').firstElementChild.innerHTML = 'Move: ' + moveCount;
+}
+
+
+//
+// Winning logic
+//
+
+// Check if there are 16 matched cards and show congratulations modal
 function gameWon() {
 	if (matchedCards === 16) {
 		setTimeout(window.alert, 200, 'You won!');
