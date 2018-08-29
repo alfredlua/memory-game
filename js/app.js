@@ -23,13 +23,13 @@ for (let i = 0; i < cards.length; i++) {
 // Match card logic
 //
 
-let openedcards = [];
+let openedCards = [];
 
 function matchCard() {
-	openedcards.push(this);
-	var len = openedcards.length;
+	openedCards.push(this);
+	let len = openedCards.length;
 	if (len === 2) {
-		if (openedcards[0].title === openedcards[1].title) {
+		if (openedCards[0].title === openedCards[1].title) {
 			matched();
 		} else {
 			notMatched();
@@ -38,16 +38,26 @@ function matchCard() {
 	
 }
 
+let matchedCards = 0;
+
 function matched() {
-	openedcards[0].classList.toggle('matched');
-	openedcards[1].classList.toggle('matched');
-	openedcards = [];
+	openedCards[0].classList.toggle('matched');
+	openedCards[1].classList.toggle('matched');
+	matchedCards += 2;
+	gameWon();
+	openedCards = [];
 }
 
 function notMatched() {
-	openedcards[0].classList.remove('open');
-	openedcards[0].classList.remove('disable');
-	openedcards[1].classList.remove('open');
-	openedcards[1].classList.remove('disable');	
-	openedcards = [];
+	openedCards[0].classList.remove('open');
+	openedCards[0].classList.remove('disable');
+	openedCards[1].classList.remove('open');
+	openedCards[1].classList.remove('disable');	
+	openedCards = [];
+}
+
+function gameWon() {
+	if (matchedCards === 16) {
+		setTimeout(window.alert, 200, 'You won!');
+	}
 }
