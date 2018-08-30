@@ -70,10 +70,26 @@ const moves = document.querySelector('.moves');
 function addMove() {
 	movesCount ++;
 	moves.innerHTML = movesCount;
+	// Calculate star rating
+	starsCount();
 	// start timer on first move
 	if (movesCount === 1) {
 		start();
 		setInterval(current, 1000);
+	}
+}
+
+//
+// Star rating
+// 
+
+const stars = document.querySelector('.stars');
+
+function starsCount() {
+	if (movesCount > 50) {
+		stars.innerHTML = "<i class=\"fas fa-star\"></i>";
+	} else if (movesCount > 20) {
+		stars.innerHTML = "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i>";
 	}
 }
 
@@ -84,11 +100,11 @@ function addMove() {
 // Show the elapsed time
 let startTime, currentTime;
 const time = document.querySelector('.time');
-
+// Set starting time
 function start() {
 	startTime = Date.now();
 }
-
+// Set current time
 function current() {
 	currentTime = Date.now();
 	let timeDiff = (currentTime - startTime);
