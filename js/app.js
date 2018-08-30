@@ -25,7 +25,6 @@ for (let i = 0; i < cards.length; i++) {
 
 // Check if the two opened cards match
 let openedCards = [];
-let moveCount = 0
 
 function matchCard() {
 	openedCards.push(this);
@@ -36,7 +35,6 @@ function matchCard() {
 		} else {
 			setTimeout(notMatched, 500);
 		}
-		moveCount += 1;
 		addMove();
 	}
 }
@@ -65,10 +63,49 @@ function notMatched() {
 // Move Counter
 //
 
+// Update moves counter text
+let movesCount = 0
+const moves = document.querySelector('.moves');
+
 function addMove() {
-	document.querySelector('.move-counter').firstElementChild.innerHTML = 'Move: ' + moveCount;
+	movesCount ++;
+	moves.innerHTML = movesCount;
+	// start timer on first move
+	if (movesCount === 1) {
+		start();
+		setInterval(current, 1000);
+	}
 }
 
+//
+// Timer
+//
+
+// Show the elapsed time
+let startTime, currentTime;
+const time = document.querySelector('.time');
+
+function start() {
+	startTime = Date.now();
+}
+
+function current() {
+	currentTime = Date.now();
+	let timeDiff = (currentTime - startTime);
+	timeDiff /= 1000;
+	if (timeDiff < 60) {
+		time.innerHTML = Math.floor(timeDiff) + ' s';
+	} else if (60 <= timeDiff < 3600) {
+		let minutes = Math.floor(timeDiff / 60);
+		let seconds = Math.floor(timeDiff % 60);
+		time.innerHTML = minutes + ' m ' + seconds + ' s';
+	} else if (timeDiff >= 3600) {
+		let hours = Math.round(timeDiff / 3600);
+		let minutes = Math.round((timeDiff - hours * 3600) / 60);
+		let seconds = Math.round(timeDiff - hours * 3600 - minutes * 60);
+		time.innerHTML = hours + ' h ' + minutes + ' m ' + seconds + ' s';
+	}
+}
 
 //
 // Winning logic
