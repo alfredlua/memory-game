@@ -71,7 +71,7 @@ function matchCard() {
 		if (openedCards[0].title === openedCards[1].title) {
 			matched();
 		} else {
-			setTimeout(notMatched, 500);
+			setTimeout(notMatched, 250);
 		}
 		addMove();
 	}
