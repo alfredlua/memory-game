@@ -29,7 +29,16 @@ function shuffleCards(array) {
 	}
 }
 
+// Shuffle cards on load
 document.addEventListener('DOMContentLoaded', shuffleCards(cards));
+
+// Shuffle cards on clicking "Restart"
+
+let restart = document.querySelector('.restart');
+
+restart.addEventListener('click', function() {
+	location.reload(true);
+});
 
 //
 // Add event listener to all cards
