@@ -1,3 +1,36 @@
+// Cards array holds all the cards
+let card = document.getElementsByClassName('card');
+let cards = [...card];
+
+let gameBoard = document.querySelector('.game-board');
+
+
+// 
+// Shuffle logic
+//
+
+function shuffleCards(array) {
+	let remainingCards = array.length, temporaryValue, randomIndex;
+
+	// While there are cards to shuffle
+	while (remainingCards) {
+		// Pick a random card
+		randomIndex = Math.floor(Math.random() * remainingCards--);
+		// Swap it with the last remaining card
+		temporaryValue = array[remainingCards];
+		array[remainingCards] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	//
+	for (let i = 0; i < cards.length; i++) {
+		card = cards[i];
+		gameBoard.appendChild(card);
+	}
+}
+
+document.addEventListener('DOMContentLoaded', shuffleCards(cards));
+
 //
 // Add event listener to all cards
 //
@@ -7,10 +40,6 @@ function openCard() {
 	this.classList.toggle('open');
 	this.classList.toggle('disable');
 }
-
-// Cards array holds all the cards
-let card = document.getElementsByClassName('card');
-let cards = [...card];
 
 // For loop to add event listeners to each card
 for (let i = 0; i < cards.length; i++) {
