@@ -177,7 +177,8 @@ function current() {
 //
 const winningModal = document.querySelector('.winning-modal');
 const finishTime = document.querySelector('.finish-time');
-const finishStars = document.querySelector('.finish-stars')
+const finishMoves = document.querySelector('.finish-moves');
+const finishStars = document.querySelector('.finish-stars');
 
 // Check if there are 16 matched cards and show congratulations modal
 function gameWon() {
@@ -185,6 +186,7 @@ function gameWon() {
 		clearInterval(interval);
 		winningModal.classList.toggle('show');
 		finishTime.innerHTML = elapsedTime;
+		finishMoves.innerHTML = movesCount;
 		finishStars.innerHTML = winningStars;
 	}
 }
