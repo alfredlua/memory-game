@@ -103,6 +103,7 @@ function notMatched() {
 
 // Update moves counter text
 let movesCount = 0
+var interval;
 const moves = document.querySelector('.moves');
 
 function addMove() {
@@ -113,7 +114,7 @@ function addMove() {
 	// start timer on first move
 	if (movesCount === 1) {
 		start();
-		setInterval(current, 1000);
+		interval = setInterval(current, 1000);
 	}
 }
 
@@ -173,6 +174,7 @@ const finishStar = document.querySelector('.finish-star')
 // Check if there are 16 matched cards and show congratulations modal
 function gameWon() {
 	if (matchedCards === 16) {
+		clearInterval(interval);
 		winningModal.classList.toggle('show');
 		finishTime.innerHTML = '(time)';
 		finishStar.innerHTML = '(stars)';
