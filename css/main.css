@@ -1,3 +1,4 @@
+
 /*
 *
 * Header
@@ -71,10 +72,14 @@
 */
 
 .card {
-	width: 120px;
-	height: 120px;
-	margin: 20px;
-	border: solid 1px #000;
+	width: 150px;
+	height: 150px;
+	margin: 10px;
+	border-radius: 4px;
+	-webkit-box-shadow: 5px 5px 10px 0px rgba(217,217,217,1);
+	-moz-box-shadow: 5px 5px 10px 0px rgba(217,217,217,1);
+	box-shadow: 5px 5px 10px 0px rgba(217,217,217,1);
+	background: #05668d;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -84,7 +89,9 @@
 
 .card.open {
 	transform: rotateY(0deg);
+	background-color: #028090;
 	font-size: 2rem;
+	color: #fff;
 	cursor: default;
 }
 
@@ -93,7 +100,7 @@
 }
 
 .card.matched {
-	background-color: red;
+	background-color: #02c39a;
 }
 
 
