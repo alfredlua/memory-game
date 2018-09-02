@@ -165,9 +165,16 @@ function current() {
 // Winning logic
 //
 
+//
+const winningModal = document.querySelector('.winning-modal');
+const finishTime = document.querySelector('.finish-time');
+const finishStar = document.querySelector('.finish-star')
+
 // Check if there are 16 matched cards and show congratulations modal
 function gameWon() {
 	if (matchedCards === 16) {
-		setTimeout(window.alert, 200, 'You won!');
+		winningModal.classList.toggle('show');
+		finishTime.innerHTML = '(time)';
+		finishStar.innerHTML = '(stars)';
 	}
 }

@@ -99,6 +99,28 @@
 
 /*
 *
+* Winning modal
+*
+*/
+
+.winning-modal {
+	position: absolute;
+	top: 30%;
+	left: 40%;
+	background-color: blue;
+	color: #fff;
+	text-align: center;
+	padding: 30px;
+	display: none;
+}
+
+.winning-modal.show {
+	display: inherit;
+}
+
+
+/*
+*
 * Footer
 *
 */
