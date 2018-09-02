@@ -121,14 +121,19 @@ function addMove() {
 //
 // Star rating
 // 
-
+let winningStars;
 const stars = document.querySelector('.stars');
 
 function starsCount() {
 	if (movesCount > 50) {
-		stars.innerHTML = "<i class=\"fas fa-star\"></i>";
+		winningStars = "<i class=\"fas fa-star\"></i>";
+		stars.innerHTML = winningStars;
 	} else if (movesCount > 20) {
-		stars.innerHTML = "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i>";
+		winningStars = "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i>";
+		stars.innerHTML = winningStars;
+	} else {
+		winningStars = "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i>"
+		stars.innerHTML = winningStars;
 	}
 }
 
@@ -137,7 +142,7 @@ function starsCount() {
 //
 
 // Show the elapsed time
-let startTime, currentTime;
+let startTime, currentTime, timeDiff, elapsedTime;
 const time = document.querySelector('.time');
 // Set starting time
 function start() {
@@ -146,19 +151,22 @@ function start() {
 // Set current time
 function current() {
 	currentTime = Date.now();
-	let timeDiff = (currentTime - startTime);
+	timeDiff = (currentTime - startTime);
 	timeDiff /= 1000;
 	if (timeDiff < 60) {
-		time.innerHTML = Math.floor(timeDiff) + ' s';
+		elapsedTime = Math.floor(timeDiff) + ' s';
+		time.innerHTML = elapsedTime;
 	} else if (60 <= timeDiff < 3600) {
 		let minutes = Math.floor(timeDiff / 60);
 		let seconds = Math.floor(timeDiff % 60);
-		time.innerHTML = minutes + ' m ' + seconds + ' s';
+		elapsedTime = minutes + ' m ' + seconds + ' s';
+		time.innerHTML = elapsedTime;
 	} else if (timeDiff >= 3600) {
-		let hours = Math.round(timeDiff / 3600);
-		let minutes = Math.round((timeDiff - hours * 3600) / 60);
-		let seconds = Math.round(timeDiff - hours * 3600 - minutes * 60);
-		time.innerHTML = hours + ' h ' + minutes + ' m ' + seconds + ' s';
+		let hours = Math.floor(timeDiff / 3600);
+		let minutes = Math.floor((timeDiff - hours * 3600) / 60);
+		let seconds = Math.floor(timeDiff - hours * 3600 - minutes * 60);
+		elapsedTime = hours + ' h ' + minutes + ' m ' + seconds + ' s';
+		time.innerHTML = elapsedTime;
 	}
 }
 
@@ -169,14 +177,14 @@ function current() {
 //
 const winningModal = document.querySelector('.winning-modal');
 const finishTime = document.querySelector('.finish-time');
-const finishStar = document.querySelector('.finish-star')
+const finishStars = document.querySelector('.finish-stars')
 
 // Check if there are 16 matched cards and show congratulations modal
 function gameWon() {
 	if (matchedCards === 16) {
 		clearInterval(interval);
 		winningModal.classList.toggle('show');
-		finishTime.innerHTML = '(time)';
-		finishStar.innerHTML = '(stars)';
+		finishTime.innerHTML = elapsedTime;
+		finishStars.innerHTML = winningStars;
 	}
 }
