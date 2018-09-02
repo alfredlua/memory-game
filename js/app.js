@@ -68,12 +68,12 @@ function matchCard() {
 	openedCards.push(this);
 	let len = openedCards.length;
 	if (len === 2) {
+		addMove();
 		if (openedCards[0].title === openedCards[1].title) {
 			matched();
 		} else {
 			setTimeout(notMatched, 250);
 		}
-		addMove();
 	}
 }
 
