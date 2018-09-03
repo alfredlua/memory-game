@@ -72,7 +72,9 @@ function matchCard() {
 		if (openedCards[0].title === openedCards[1].title) {
 			matched();
 		} else {
-			setTimeout(notMatched, 250);
+			openedCards[0].classList.toggle('wrong');
+			openedCards[1].classList.toggle('wrong');
+			setTimeout(notMatched, 400);
 		}
 	}
 }
@@ -92,8 +94,10 @@ function matched() {
 function notMatched() {
 	openedCards[0].classList.remove('open');
 	openedCards[0].classList.remove('disable');
+	openedCards[0].classList.remove('wrong');
 	openedCards[1].classList.remove('open');
-	openedCards[1].classList.remove('disable');	
+	openedCards[1].classList.remove('disable');
+	openedCards[1].classList.remove('wrong');	
 	openedCards = [];
 }
 

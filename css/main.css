@@ -1,3 +1,7 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
 
 /*
 *
@@ -7,6 +11,8 @@
 
 .title {
 	text-align: center;
+	font-family: 'Lora', serif;
+	margin-top: 50px;
 }
 
 
@@ -26,9 +32,11 @@
 */
 
 .dashboard {
+	width: 60%;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-evenly;
+	margin: 0 auto;
 }
 
 .timer {
@@ -47,6 +55,10 @@
 .restart {
 	margin: 0 20px;
 	cursor: pointer;
+	background-color: #253031;
+	color: #fff;
+	padding: 0 20px;
+	border-radius: 4px;
 }
 
 
@@ -58,11 +70,15 @@
 */
 
 .game-board {
-	width: 800px;
+	width: 750px;
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0 auto;
+	margin: 20px auto;
+	padding: 30px 0;
 	justify-content: center;
+	background: rgb(124,212,134);
+	background: linear-gradient(315deg, rgba(124,212,134,1) 0%, rgba(54,196,195,1) 52%, rgba(0,166,255,1) 100%);
+	border-radius: 10px;
 }
 
 /*
@@ -76,9 +92,9 @@
 	height: 150px;
 	margin: 10px;
 	border-radius: 4px;
-	-webkit-box-shadow: 5px 5px 10px 0px rgba(217,217,217,1);
-	-moz-box-shadow: 5px 5px 10px 0px rgba(217,217,217,1);
-	box-shadow: 5px 5px 10px 0px rgba(217,217,217,1);
+	-webkit-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
+	-moz-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
+	box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
 	background: #05668d;
 	display: flex;
 	justify-content: center;
@@ -103,6 +119,10 @@
 	background-color: #02c39a;
 }
 
+.card.wrong {
+	background-color: #dd2c64;
+}
+
 
 /*
 *
@@ -113,11 +133,15 @@
 .winning-modal {
 	position: absolute;
 	top: 30%;
-	left: 40%;
-	background-color: blue;
+	left: 37.5%;
+	background-color: #35A7ff;
 	color: #fff;
 	text-align: center;
 	padding: 30px;
+	border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
+	-moz-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
+	box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
 	display: none;
 }
 
