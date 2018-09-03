@@ -134,11 +134,11 @@ body {
 	position: absolute;
 	top: 30%;
 	left: 37.5%;
-	background-color: #35A7ff;
+	background-color: #05668d;
 	color: #fff;
 	text-align: center;
 	padding: 30px;
-	border-radius: 10px;
+	border-radius: 4px;
 	-webkit-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
 	-moz-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
 	box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
