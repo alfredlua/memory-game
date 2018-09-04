@@ -35,8 +35,13 @@ document.addEventListener('DOMContentLoaded', shuffleCards(cards));
 // Shuffle cards on clicking "Restart"
 
 let restart = document.querySelector('.restart');
+let playAgain = document.querySelector('.play-again');
 
 restart.addEventListener('click', function() {
+	location.reload(true);
+});
+
+playAgain.addEventListener('click', function() {
 	location.reload(true);
 });
 
