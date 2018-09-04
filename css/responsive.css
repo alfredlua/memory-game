@@ -93,9 +93,14 @@
 		font-size: 2rem;
 	}
 
+	/*
+	*
+	* Winning modal
+	*
+	*/
+
 	.winning-modal {
 		padding: 30px;
-		
 	}
 }
 

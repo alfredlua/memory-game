@@ -124,11 +124,11 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin: -200px 0 0 -175px;
+	margin: -150px 0 0 -155px;
 	background-color: #05668d;
 	color: #fff;
 	text-align: center;
-	padding: 20px;
+	padding: 10px;
 	border-radius: 4px;
 	-webkit-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
 	-moz-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
@@ -138,6 +138,14 @@ body {
 
 .winning-modal.show {
 	display: inherit;
+}
+
+.play-again {
+	cursor: pointer;
+	background: rgb(124,212,134);
+	background: linear-gradient(315deg, rgba(124,212,134,1) 0%, rgba(54,196,195,1) 52%, rgba(0,166,255,1) 100%);
+	padding: 1%;
+	border-radius: 4px;
 }
 
 
