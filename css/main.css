@@ -39,21 +39,11 @@ body {
 	margin: 0 auto;
 }
 
-.timer {
-	margin: 0 20px;
-}
-
-.move-counter {
-	margin: 0 20px;
-}
-
 .star-rating {
-	margin: 0 20px;
 	color: #f4df42;
 }
 
 .restart {
-	margin: 0 20px;
 	cursor: pointer;
 	background-color: #253031;
 	color: #fff;
@@ -70,7 +60,7 @@ body {
 */
 
 .game-board {
-	width: 750px;
+	width: 90%;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 20px auto;
@@ -88,9 +78,9 @@ body {
 */
 
 .card {
-	width: 150px;
-	height: 150px;
-	margin: 10px;
+	width: 50px;
+	height: 50px;
+	margin: 5px;
 	border-radius: 4px;
 	-webkit-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
 	-moz-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
@@ -106,7 +96,7 @@ body {
 .card.open {
 	transform: rotateY(0deg);
 	background-color: #028090;
-	font-size: 2rem;
+	font-size: 1.2rem;
 	color: #fff;
 	cursor: default;
 }
@@ -132,12 +122,13 @@ body {
 
 .winning-modal {
 	position: absolute;
-	top: 30%;
-	left: 37.5%;
+	top: 50%;
+	left: 50%;
+	margin: -200px 0 0 -175px;
 	background-color: #05668d;
 	color: #fff;
 	text-align: center;
-	padding: 30px;
+	padding: 20px;
 	border-radius: 4px;
 	-webkit-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
 	-moz-box-shadow: 5px 5px 10px 0px rgba(79,79,79,1);
