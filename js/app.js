@@ -69,7 +69,7 @@ function matchCard() {
 	let len = openedCards.length;
 	if (len === 2) {
 		addMove();
-		if (openedCards[0].type === openedCards[1].type) {
+		if (openedCards[0].title === openedCards[1].title) {
 			matched();
 		} else {
 			openedCards[0].classList.toggle('wrong');
