@@ -1,0 +1,140 @@
+@media screen and (min-width: 350px) {
+	/*
+	*
+	* Dashboard
+	*
+	*/
+
+	.timer,
+	.moves-counter,
+	.star-rating,
+	.restart {
+		margin: 0 10px;
+	}
+
+	/*
+	*
+	* Card
+	*
+	*/
+
+	.card {
+		width: 18%;
+		margin: 10px;
+		padding: 1% 0;
+	}
+}
+
+@media screen and (min-width: 375px) {
+	/*
+	*
+	* Card
+	*
+	*/
+
+	.card {
+		padding: 2% 0;
+	}
+}
+
+@media screen and (min-width: 450px) {
+	/*
+	*
+	* Card
+	*
+	*/
+
+	.card {
+		padding: 3% 0;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	/*
+	*
+	* Dashboard
+	*
+	*/
+
+	.dashboard {
+		width: 500px;
+	}
+
+	.timer,
+	.moves-counter,
+	.star-rating,
+	.restart {
+		margin: 0 20px;
+	}
+
+	/*
+	*
+	* Game board
+	*
+	*/
+
+	.game-board {
+		margin: 20px auto;
+		padding: 30px;
+	}
+
+	/*
+	*
+	* Card
+	*
+	*/
+
+	.card {
+		width: 20%;
+		padding: 5% 0;
+	}
+
+	.card.open {
+		font-size: 2rem;
+	}
+
+	/*
+	*
+	* Winning modal
+	*
+	*/
+
+	.winning-modal {
+		padding: 30px;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	/*
+	*
+	* Game board
+	*
+	*/
+
+	.game-board {
+		width: 750px;
+		padding: 30px 0;
+	}
+
+	/*
+	*
+	* Dashboard
+	*
+	*/
+
+	.dashboard {
+		width: 800px;
+	}
+
+	/*
+	*
+	* Card
+	*
+	*/
+
+	.card {
+		width: 150px;
+		height: 150px;
+		padding: 0;
+	}
+}
