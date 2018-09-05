@@ -1,12 +1,19 @@
+//
+// 
+// Declarations
+//
+//
+
 // Cards array holds all the cards
 let card = document.getElementsByClassName('card');
 let cards = [...card];
-
 let gameBoard = document.querySelector('.game-board');
 
 
+//
 // 
 // Shuffle logic
+//
 //
 
 function shuffleCards(array) {
@@ -22,7 +29,7 @@ function shuffleCards(array) {
 		array[randomIndex] = temporaryValue;
 	}
 
-	//
+	// Add cards to the game board
 	for (let i = 0; i < cards.length; i++) {
 		card = cards[i];
 		gameBoard.appendChild(card);
@@ -32,8 +39,8 @@ function shuffleCards(array) {
 // Shuffle cards on load
 document.addEventListener('DOMContentLoaded', shuffleCards(cards));
 
-// Shuffle cards on clicking "Restart"
 
+// Shuffle cards on clicking "Restart" or "Play Again"
 let restart = document.querySelector('.restart');
 let playAgain = document.querySelector('.play-again');
 
@@ -46,14 +53,10 @@ playAgain.addEventListener('click', function() {
 });
 
 //
-// Add event listener to all cards
 //
-
-// Open card
-function openCard() {
-	this.classList.toggle('open');
-	this.classList.toggle('disable');
-}
+// Match card logic
+//
+//
 
 // For loop to add event listeners to each card
 for (let i = 0; i < cards.length; i++) {
@@ -62,9 +65,11 @@ for (let i = 0; i < cards.length; i++) {
 	card.addEventListener('click', matchCard);
 };
 
-//
-// Match card logic
-//
+// Open card
+function openCard() {
+	this.classList.toggle('open');
+	this.classList.toggle('disable');
+}
 
 // Check if the two opened cards match
 let openedCards = [];
@@ -74,12 +79,13 @@ function matchCard() {
 	let len = openedCards.length;
 	if (len === 2) {
 		addMove();
-		if (openedCards[0].title === openedCards[1].title) {
+		if (openedCards[0].firstElementChild.className === openedCards[1].firstElementChild.className) {
 			matched();
 		} else {
-			openedCards[0].classList.toggle('wrong');
-			openedCards[1].classList.toggle('wrong');
-			setTimeout(notMatched, 400);
+			gameBoard.classList.toggle('disable');
+			setTimeout(function(){openedCards[0].classList.toggle('wrong')},300);
+			setTimeout(function(){openedCards[1].classList.toggle('wrong')},300);
+			setTimeout(notMatched, 900);
 		}
 	}
 }
@@ -102,12 +108,15 @@ function notMatched() {
 	openedCards[0].classList.remove('wrong');
 	openedCards[1].classList.remove('open');
 	openedCards[1].classList.remove('disable');
-	openedCards[1].classList.remove('wrong');	
+	openedCards[1].classList.remove('wrong');
+	gameBoard.classList.remove('disable');
 	openedCards = [];
 }
 
 //
+//
 // Move Counter
+//
 //
 
 // Update moves counter text
@@ -128,8 +137,12 @@ function addMove() {
 }
 
 //
+//
 // Star rating
-// 
+//
+//
+
+// Update stars count based on the number of moves 
 let winningStars;
 const stars = document.querySelector('.stars');
 
@@ -147,16 +160,20 @@ function starsCount() {
 }
 
 //
+//
 // Timer
 //
+//
 
-// Show the elapsed time
+// Declarations
 let startTime, currentTime, timeDiff, elapsedTime;
 const time = document.querySelector('.time');
+
 // Set starting time
 function start() {
 	startTime = Date.now();
 }
+
 // Set current time
 function current() {
 	currentTime = Date.now();
@@ -180,10 +197,12 @@ function current() {
 }
 
 //
+//
 // Winning logic
 //
-
 //
+
+// Declarations
 const winningModal = document.querySelector('.winning-modal');
 const finishTime = document.querySelector('.finish-time');
 const finishMoves = document.querySelector('.finish-moves');

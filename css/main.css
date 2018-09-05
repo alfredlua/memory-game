@@ -9,12 +9,24 @@ body {
 *
 */
 
-.title {
+.title,
+.subtitle {
 	text-align: center;
 	font-family: 'Lora', serif;
+}
+
+
+.title {
 	margin-top: 50px;
 }
 
+h1 {
+	font-size: 1.5em;
+}
+
+h2 {
+	font-size: 1.2em;
+}
 
 
 /*
@@ -71,6 +83,10 @@ body {
 	border-radius: 10px;
 }
 
+.game-board.disable {
+	pointer-events: none;
+}
+
 /*
 *
 * Card
@@ -99,6 +115,7 @@ body {
 	font-size: 1.2rem;
 	color: #fff;
 	cursor: default;
+	animation: flip-card 0.75s;
 }
 
 .card.disable {
@@ -107,10 +124,12 @@ body {
 
 .card.matched {
 	background-color: #02c39a;
+	animation: stretch 0.5s;
 }
 
 .card.wrong {
 	background-color: #dd2c64;
+	animation: shake 0.5s;
 }
 
 
@@ -122,9 +141,9 @@ body {
 
 .winning-modal {
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	left: 50%;
-	margin: -150px 0 0 -155px;
+	margin-left: -155px;
 	background-color: #05668d;
 	color: #fff;
 	text-align: center;
@@ -157,4 +176,215 @@ body {
 
 footer {
 	text-align: center;
+}
+
+/*
+*
+* Animations
+*
+*/
+
+/* Flip card animation */
+@-webkit-@keyframes flip-card {
+	from {
+		transform: rotate3d(0, 1, 0, 100deg);
+	}
+
+	to {
+		transform: rotate3d(0, 1, 0, 0deg);
+	}
+}
+
+@-moz-@keyframes flip-card {
+	from {
+		transform: rotate3d(0, 1, 0, 100deg);
+	}
+
+	to {
+		transform: rotate3d(0, 1, 0, 0deg);
+	}
+}
+
+@-o-@keyframes flip-card {
+	from {
+		transform: rotate3d(0, 1, 0, 100deg);
+	}
+
+	to {
+		transform: rotate3d(0, 1, 0, 0deg);
+	}
+}
+
+@keyframes flip-card {
+	from {
+		transform: rotate3d(0, 1, 0, 100deg);
+	}
+
+	to {
+		transform: rotate3d(0, 1, 0, 0deg);
+	}
+}
+
+/* Match animation: Stretch */
+
+@-webkit-@keyframes stretch {
+	from {
+		transform: scale3d(1 , 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+@-moz-@keyframes stretch {
+	from {
+		transform: scale3d(1 , 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+@-moz-@keyframes stretch {
+	from {
+		transform: scale3d(1 , 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+@keyframes stretch {
+	from {
+		transform: scale3d(1 , 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+/* Error animation: Shake */
+
+@-webkit-@keyframes shake {
+	from {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	20% {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+
+	40% {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	60% {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+	
+	80% {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	to {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+}
+
+@-moz-@keyframes shake {
+	from {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	20% {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+
+	40% {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	60% {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+	
+	80% {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	to {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+}
+
+@-moz-@keyframes shake {
+	from {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	20% {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+
+	40% {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	60% {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+	
+	80% {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	to {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+}
+
+@keyframes shake {
+	from {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	20% {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+
+	40% {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	60% {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
+	
+	80% {
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	to {
+		transform: rotate3d(0, 0, 1, -5deg);
+	}
 }
