@@ -79,7 +79,7 @@ function matchCard() {
 	let len = openedCards.length;
 	if (len === 2) {
 		addMove();
-		if (openedCards[0].title === openedCards[1].title) {
+		if (openedCards[0].firstElementChild.className === openedCards[1].firstElementChild.className) {
 			matched();
 		} else {
 			setTimeout(function(){openedCards[0].classList.toggle('wrong')},300);
