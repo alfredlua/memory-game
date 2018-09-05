@@ -1,12 +1,19 @@
+//
+// 
+// Declarations
+//
+//
+
 // Cards array holds all the cards
 let card = document.getElementsByClassName('card');
 let cards = [...card];
-
 let gameBoard = document.querySelector('.game-board');
 
 
+//
 // 
 // Shuffle logic
+//
 //
 
 function shuffleCards(array) {
@@ -22,7 +29,7 @@ function shuffleCards(array) {
 		array[randomIndex] = temporaryValue;
 	}
 
-	//
+	// Add cards to the game board
 	for (let i = 0; i < cards.length; i++) {
 		card = cards[i];
 		gameBoard.appendChild(card);
@@ -32,8 +39,8 @@ function shuffleCards(array) {
 // Shuffle cards on load
 document.addEventListener('DOMContentLoaded', shuffleCards(cards));
 
-// Shuffle cards on clicking "Restart"
 
+// Shuffle cards on clicking "Restart" or "Play Again"
 let restart = document.querySelector('.restart');
 let playAgain = document.querySelector('.play-again');
 
@@ -46,14 +53,10 @@ playAgain.addEventListener('click', function() {
 });
 
 //
-// Add event listener to all cards
 //
-
-// Open card
-function openCard() {
-	this.classList.toggle('open');
-	this.classList.toggle('disable');
-}
+// Match card logic
+//
+//
 
 // For loop to add event listeners to each card
 for (let i = 0; i < cards.length; i++) {
@@ -62,9 +65,11 @@ for (let i = 0; i < cards.length; i++) {
 	card.addEventListener('click', matchCard);
 };
 
-//
-// Match card logic
-//
+// Open card
+function openCard() {
+	this.classList.toggle('open');
+	this.classList.toggle('disable');
+}
 
 // Check if the two opened cards match
 let openedCards = [];
@@ -107,7 +112,9 @@ function notMatched() {
 }
 
 //
+//
 // Move Counter
+//
 //
 
 // Update moves counter text
@@ -128,8 +135,12 @@ function addMove() {
 }
 
 //
+//
 // Star rating
-// 
+//
+//
+
+// Update stars count based on the number of moves 
 let winningStars;
 const stars = document.querySelector('.stars');
 
@@ -147,16 +158,20 @@ function starsCount() {
 }
 
 //
+//
 // Timer
 //
+//
 
-// Show the elapsed time
+// Declarations
 let startTime, currentTime, timeDiff, elapsedTime;
 const time = document.querySelector('.time');
+
 // Set starting time
 function start() {
 	startTime = Date.now();
 }
+
 // Set current time
 function current() {
 	currentTime = Date.now();
@@ -180,10 +195,12 @@ function current() {
 }
 
 //
+//
 // Winning logic
 //
-
 //
+
+// Declarations
 const winningModal = document.querySelector('.winning-modal');
 const finishTime = document.querySelector('.finish-time');
 const finishMoves = document.querySelector('.finish-moves');
