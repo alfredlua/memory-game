@@ -19,3 +19,5 @@ I'll be grateful if you tweet me about it at @alfred_lua!
 ## Misc
 
 This is a Udacity course project built with HTML, CSS, and Javascript.
+
+Big shoutout to [Sandra Israel-Ovirih](https://twitter.com/SandraIsrael_O) whose [blog post](https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript) helped me a lot whenever I was stuck.
