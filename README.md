@@ -14,7 +14,7 @@ This game is a test of the player's memory. The player has to match all eight pa
 
 ## Spotted a bug?
 
-I'll be grateful if you tweet me about it at @alfred_lua!
+I'll be grateful if you tweet me about it at [@alfred_lua](https://twitter.com/alfred_lua)!
 
 ## Misc
 
