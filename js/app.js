@@ -82,6 +82,7 @@ function matchCard() {
 		if (openedCards[0].firstElementChild.className === openedCards[1].firstElementChild.className) {
 			matched();
 		} else {
+			gameBoard.classList.toggle('disable');
 			setTimeout(function(){openedCards[0].classList.toggle('wrong')},300);
 			setTimeout(function(){openedCards[1].classList.toggle('wrong')},300);
 			setTimeout(notMatched, 900);
@@ -107,7 +108,8 @@ function notMatched() {
 	openedCards[0].classList.remove('wrong');
 	openedCards[1].classList.remove('open');
 	openedCards[1].classList.remove('disable');
-	openedCards[1].classList.remove('wrong');	
+	openedCards[1].classList.remove('wrong');
+	gameBoard.classList.remove('disable');
 	openedCards = [];
 }
 

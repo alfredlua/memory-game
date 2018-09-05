@@ -83,6 +83,10 @@ h2 {
 	border-radius: 10px;
 }
 
+.game-board.disable {
+	pointer-events: none;
+}
+
 /*
 *
 * Card
