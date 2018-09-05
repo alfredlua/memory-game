@@ -141,9 +141,9 @@ h2 {
 
 .winning-modal {
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	left: 50%;
-	margin: -150px 0 0 -155px;
+	margin-left: -155px;
 	background-color: #05668d;
 	color: #fff;
 	text-align: center;
