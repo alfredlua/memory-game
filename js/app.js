@@ -82,9 +82,9 @@ function matchCard() {
 		if (openedCards[0].title === openedCards[1].title) {
 			matched();
 		} else {
-			openedCards[0].classList.toggle('wrong');
-			openedCards[1].classList.toggle('wrong');
-			setTimeout(notMatched, 400);
+			setTimeout(function(){openedCards[0].classList.toggle('wrong')},300);
+			setTimeout(function(){openedCards[1].classList.toggle('wrong')},300);
+			setTimeout(notMatched, 900);
 		}
 	}
 }
