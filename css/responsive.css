@@ -52,6 +52,20 @@
 @media screen and (min-width: 500px) {
 	/*
 	*
+	* Header
+	*
+	*/
+
+	h1 {
+		font-size: 2em;
+	}
+	
+	h2 {
+		font-size: 1.5em;
+	}
+
+	/*
+	*
 	* Dashboard
 	*
 	*/
