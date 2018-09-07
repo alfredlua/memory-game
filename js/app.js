@@ -7,8 +7,8 @@
 // Cards array holds all the cards
 let card = document.getElementsByClassName('card');
 let cards = [...card];
-let gameBoard = document.querySelector('.game-board');
 
+let gameBoard = document.querySelector('.game-board');
 
 //
 // 
@@ -32,25 +32,17 @@ function shuffleCards(array) {
 	// Add cards to the game board
 	for (let i = 0; i < cards.length; i++) {
 		card = cards[i];
+		// Close all cards
+		card.classList.remove('open');
+		card.classList.remove('disable');
+		card.classList.remove('wrong');
+		card.classList.remove('matched');
 		gameBoard.appendChild(card);
 	}
 }
 
 // Shuffle cards on load
 document.addEventListener('DOMContentLoaded', shuffleCards(cards));
-
-
-// Shuffle cards on clicking "Restart" or "Play Again"
-let restart = document.querySelector('.restart');
-let playAgain = document.querySelector('.play-again');
-
-restart.addEventListener('click', function() {
-	location.reload(true);
-});
-
-playAgain.addEventListener('click', function() {
-	location.reload(true);
-});
 
 //
 //
@@ -120,8 +112,8 @@ function notMatched() {
 //
 
 // Update moves counter text
-let movesCount = 0
 var interval;
+let movesCount = 0
 const moves = document.querySelector('.moves');
 
 function addMove() {
@@ -218,3 +210,36 @@ function gameWon() {
 		finishStars.innerHTML = winningStars;
 	}
 }
+
+//
+//
+// Restart
+//
+//
+
+// Restart game on clicking "Restart" or "Play Again"
+let restart = document.querySelector('.restart');
+let playAgain = document.querySelector('.play-again');
+
+function restartGame() {
+	//shuffleCards
+	shuffleCards(cards);
+	// Restart moves count
+	movesCount = 0;
+	moves.innerHTML = movesCount;
+	// Restart timer
+	clearInterval(interval);
+	time.innerHTML = '0 s';
+}
+
+restart.addEventListener('click', restartGame);
+playAgain.addEventListener('click', restartGame);
+
+// Shortcut for restarting the game
+function restartShortcut(e) {
+	if (e.key == 'r') {
+		restartGame();
+	}
+}
+
+document.addEventListener('keydown', restartShortcut);
