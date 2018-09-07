@@ -224,12 +224,16 @@ let playAgain = document.querySelector('.play-again');
 function restartGame() {
 	//shuffleCards
 	shuffleCards(cards);
-	// Restart moves count
+	// Reset matched cards count
+	matchedCards = 0;
+	// Reset moves count
 	movesCount = 0;
 	moves.innerHTML = movesCount;
-	// Restart timer
+	// Reset timer
 	clearInterval(interval);
 	time.innerHTML = '0 s';
+	// Hide winning modal
+	winningModal.classList.remove('show');
 }
 
 restart.addEventListener('click', restartGame);
