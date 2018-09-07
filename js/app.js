@@ -52,6 +52,15 @@ playAgain.addEventListener('click', function() {
 	location.reload(true);
 });
 
+// Shortcut for restarting the game
+function restartShortcut(e) {
+	if (e.key == 'r') {
+		location.reload(true);
+	}
+}
+
+document.addEventListener('keydown', restartShortcut);
+
 //
 //
 // Match card logic
