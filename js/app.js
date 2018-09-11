@@ -73,7 +73,8 @@ function matchCard() {
 	let len = openedCards.length;
 	if (len === 2) {
 		addMove();
-		if (openedCards[0].firstElementChild.className === openedCards[1].firstElementChild.className) {
+		if (openedCards[0].firstElementChild.className === 
+			openedCards[1].firstElementChild.className) {
 			matched();
 		} else {
 			gameBoard.classList.toggle('disable');
