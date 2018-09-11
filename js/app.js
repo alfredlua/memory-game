@@ -77,8 +77,8 @@ function matchCard() {
 			matched();
 		} else {
 			gameBoard.classList.toggle('disable');
-			setTimeout(function(){openedCards[0].classList.toggle('wrong')},300);
-			setTimeout(function(){openedCards[1].classList.toggle('wrong')},300);
+			setTimeout(() => {openedCards[0].classList.toggle('wrong')},300);
+			setTimeout(() => {openedCards[1].classList.toggle('wrong')},300);
 			setTimeout(notMatched, 900);
 		}
 	}
@@ -164,9 +164,7 @@ let startTime, currentTime, timeDiff, elapsedTime;
 const time = document.querySelector('.time');
 
 // Set starting time
-function start() {
-	startTime = Date.now();
-}
+var start = () => startTime = Date.now()
 
 // Set current time
 function current() {
