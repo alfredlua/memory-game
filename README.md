@@ -17,6 +17,7 @@ This game is a test of the player's memory. The player has to match all eight pa
 - HTML, CSS, and Javascript
 - Font Awesome - For the icons
 - Google Fonts - For the fonts
+- GitHub & BitBucket HTML Preview - Used to preview the game using the Github repo
 
 ## Spotted a bug?
 
