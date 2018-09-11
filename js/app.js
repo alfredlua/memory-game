@@ -73,7 +73,8 @@ function matchCard() {
 	let len = openedCards.length;
 	if (len === 2) {
 		addMove();
-		if (openedCards[0].firstElementChild.className === openedCards[1].firstElementChild.className) {
+		if (openedCards[0].firstElementChild.className === 
+			openedCards[1].firstElementChild.className) {
 			matched();
 		} else {
 			gameBoard.classList.toggle('disable');
@@ -139,16 +140,17 @@ function addMove() {
 // Update stars count based on the number of moves 
 let winningStars;
 const stars = document.querySelector('.stars');
+let star = "<i class=\"fas fa-star\"></i>";
 
 function starsCount() {
 	if (movesCount > 50) {
-		winningStars = "<i class=\"fas fa-star\"></i>";
+		winningStars = `${star}`;
 		stars.innerHTML = winningStars;
 	} else if (movesCount > 20) {
-		winningStars = "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i>";
+		winningStars = `${star.repeat(2)}`;
 		stars.innerHTML = winningStars;
 	} else {
-		winningStars = "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i>"
+		winningStars = `${star.repeat(3)}`;
 		stars.innerHTML = winningStars;
 	}
 }
