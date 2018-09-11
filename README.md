@@ -12,12 +12,16 @@ This game is a test of the player's memory. The player has to match all eight pa
 4. Match all eight pairs of cards to win the game.
 5. Good luck!
 
+## Dependencies
+
+- HTML, CSS, and Javascript
+- Font Awesome - For the icons
+- Google Fonts - For the fonts
+
 ## Spotted a bug?
 
 I'll be grateful if you tweet me about it at [@alfred_lua](https://twitter.com/alfred_lua)!
 
-## Misc
-
-This is a Udacity course project built with HTML, CSS, and Javascript.
+## Acknowledgement
 
 Big shoutout to [Sandra Israel-Ovirih](https://twitter.com/SandraIsrael_O) whose [blog post](https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript) helped me a lot whenever I was stuck.
